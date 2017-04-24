@@ -1,6 +1,12 @@
 <?php
 
+namespace coolname\Hw4\src\views\layouts;
+use coolname\Hw4\src\views\mainView;
+
+use coolname\Hw4\src\controllers\editController;
+
 require_once __DIR__."/../mainView.php";
+require_once __DIR__."/../../controllers/editController.php";
 
 class landingLayout extends mainView {
 
@@ -14,8 +20,13 @@ class landingLayout extends mainView {
         ?>
         <h1> <a href="index.php"> Web Sheets </a></h1>
 
-        <input type="text" name="webSheetName"/>
-        <button>Go</button>
+        <form>
+            <input type="hidden" name="c" value="edit"/>
+            <input type="text" name="webSheetName"/>
+            <button>Go</button>
+        </form>
+
+
         <?php
     }
 }

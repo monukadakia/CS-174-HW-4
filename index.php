@@ -1,41 +1,27 @@
 <?php
 
+namespace coolname\Hw4;
+
 $files = glob(__DIR__."/src/controllers/". "*.php");
 
 foreach ($files as $file) {
     require_once($file);
 }
 
-$files = glob(__DIR__."/src/configs/". "*.php");
 
-foreach ($files as $file) {
-    require_once($file);
-}
-
-use coolname\hw3\src\controllers as Control;
-use coolname\hw3\src\configs as Config;
+use coolname\Hw4\src\controllers as Control;
 
 
 $activity = (isset($_REQUEST['c']) && in_array($_REQUEST['c'], [
-		"landing", "sublist", "newNote", "newList", "displayNote"])) ? $_REQUEST['c'] . "Controller":"landingController";
+		"landing", "edit", "read"])) ? $_REQUEST['c'] . "Controller":"landingController";
 
 
 if ($activity == 'landingController') {
-
-    $_REQUEST['title'] = "Note-A-List";
-    $_REQUEST['m'] = 'displayLandingLayout';
-    new Control\landingController($_REQUEST['m']);
+    new Control\landingController();
 }
-else if ($activity == 'sublistController'){
-    new Control\sublistController($_REQUEST['title'], $_REQUEST['m']);
+else if ($activity == 'editController'){
+    new Control\editController();
 }
-else if($activity == 'newNoteController') {
-    new Control\newNoteController($_REQUEST['m']);
+else if($activity == 'readController') {
+    new Control\readController();
 }
-else if ($activity == 'newListController') {
-    new Control\newListController($_REQUEST['m']);
-}
-else if ($activity == 'displayNoteController') {
-    new Control\displayNoteController($_REQUEST['m']);
-}
-

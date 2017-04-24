@@ -6,6 +6,8 @@
  * Time: 4:58 PM
  */
 
+namespace coolname\Hw4\src\views;
+
 class mainView
 {
     function renderHeader()
