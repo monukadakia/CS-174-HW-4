@@ -17,6 +17,7 @@ class mainView
         <html>
         <head>
             <title>Web Sheets</title>
+            <script type="text/javascript" src="/../Hw4/src/resources/spreadsheet.js"></script>
 
         </head>
         <body>
