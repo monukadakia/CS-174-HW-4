@@ -5,8 +5,6 @@ use coolname\Hw4\src\views\mainView;
 
 use coolname\Hw4\src\controllers\editController;
 
-require_once __DIR__."/../mainView.php";
-require_once __DIR__."/../../controllers/editController.php";
 
 class landingLayout extends mainView {
 

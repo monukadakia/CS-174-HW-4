@@ -2,12 +2,13 @@
 
 namespace coolname\Hw4;
 
-$files = glob(__DIR__."/src/controllers/". "*.php");
+//$files = glob(__DIR__."/src/controllers/". "*.php");
+//
+//foreach ($files as $file) {
+//    require_once($file);
+//}
 
-foreach ($files as $file) {
-    require_once($file);
-}
-
+require_once "vendor/autoload.php";
 
 use coolname\Hw4\src\controllers as Control;
 
