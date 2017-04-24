@@ -1,6 +1,4 @@
 <?php
-namespace coolname\hw3;
-use coolname\hw3\src\configs as con;
 
 $files = glob(__DIR__."/src/controllers/". "*.php");
 
@@ -23,7 +21,7 @@ $activity = (isset($_REQUEST['c']) && in_array($_REQUEST['c'], [
 
 
 if ($activity == 'landingController') {
-    new con\CreateDB();
+
     $_REQUEST['title'] = "Note-A-List";
     $_REQUEST['m'] = 'displayLandingLayout';
     new Control\landingController($_REQUEST['m']);
