@@ -22,8 +22,6 @@ class editLayout extends mainView {
         <label id="fileURL"> File Url:</label><input type="text" name="fileURL"/><br/>
 
         <div id="spreadSheet">
-            Testing
-
             <script>
                 var sheet = new Spreadsheet('spreadSheet', '[["Tom"],["Sally"]]', {"mode":"write"});
                 sheet.draw();
