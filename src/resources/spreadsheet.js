@@ -239,6 +239,11 @@ function Spreadsheet(spreadsheet_id, supplied_data)
     }
 
 
+    p.sayHello = function () {
+        document.write("Hello world");
+        document.getElementById(spreadsheet_id).innerHTML = "<p>"+ "You have " + timeCounter + " seconds left!!" + "</p>";
+    }
+
     /**
      * Callback for click events on spreadsheet. Determines if the event
      * occurred on a spreadsheet cell. If so, it opens a prompt for a
@@ -263,6 +268,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                 data_elt = document.getElementById(self.data_id);
                 data_elt.value = JSON.stringify(data);
                 event.target.innerHTML = new_value;
+                ajax_post(data_elt.value);
             }
         } else if (type == 'add' && row == -1 && column >= 0) {
             for (var i = 0; i < length; i++) {
@@ -312,4 +318,30 @@ function Spreadsheet(spreadsheet_id, supplied_data)
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);
     }
+}
+
+function ajax_post(data){
+    // Create our XMLHttpRequest object
+    console.log("It came in here");
+    var hr = new XMLHttpRequest();
+    // Create some variables we need to send to our PHP file
+    var url = "test.php";
+    var webSheetName = document.getElementById("webSheetName").innerHTML;
+    console.log(webSheetName);
+    var vars = "data=" + data + "&webSheetName=" + webSheetName;
+    hr.open("POST", url, true);
+    // Set content type header information for sending url encoded variables in the request
+    hr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // Access the onreadystatechange event for the XMLHttpRequest object
+    hr.onreadystatechange = function() {
+        if(hr.readyState == 4 && hr.status == 200) {
+            var return_data = hr.responseText;
+            console.log(return_data);
+            //document.getElementById("status").innerHTML = return_data;
+        }
+    }
+    // Send the data to PHP now... and wait for response to update the status div
+    hr.send(vars); // Actually execute the request
+    //document.getElementById("status").innerHTML = "processing...";
+    console.log("It goes out of here");
 }
