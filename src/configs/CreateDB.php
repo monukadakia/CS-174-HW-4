@@ -16,7 +16,7 @@ class CreateDB {
         $this->mySql->query($query);
         $this->mySql->query("USE ".Config::Database);
         $this->mySql->query("create table  SHEET(sheet_id int PRIMARY KEY AUTO_INCREMENT, sheet_name TEXT NOT NULL, sheet_data TEXT)");
-        $this->mySql->query("create table  SHEET_CODES(sheet_id int PRIMARY KEY AUTO_INCREMENT, hash_code TEXT NOT NULL, code_type TEXT)");
+        $this->mySql->query("create table  SHEET_CODES(sheet_id int, hash_code TEXT NOT NULL, code_type TEXT)");
 
     }
 
@@ -43,6 +43,14 @@ class CreateDB {
             return $data;
         }
         return null;
+    }
+
+    function get_sheet_id($query){
+
+        if($id = $this->mySql->query($query)){
+            $sheet_id = $id->fetch_assoc();
+            return $sheet_id;
+        }
     }
 }
 new CreateDB();

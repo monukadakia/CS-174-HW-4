@@ -15,14 +15,24 @@ class editController{
 
     function __construct()
     {
+        $hashCodes = [];
         $obj = new Model\editModel();
         $this->displayEditLayout();
 
         $spreadName = $_REQUEST['webSheetName'];
+
+
+        $hashr = substr(\hash("md5", $spreadName.'r'), 0, 8);
+        $hashe = substr(\hash("md5", $spreadName.'e'), 0, 8);
+        $hashf = substr(\hash("md5", $spreadName.'f'), 0, 8);
+        $hashCodes['r'] = substr(hexdec($hashr), 0, 8);
+        $hashCodes['e'] = substr(hexdec($hashe), 0, 8);
+        $hashCodes['f'] = substr(hexdec($hashf), 0, 8);
+
         $name = $obj->fetch_name($spreadName);
         if(!isset($name))
         {
-            $obj->store_name($spreadName);
+            $obj->store_name($spreadName, $hashCodes);
         }
     }
 

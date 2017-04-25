@@ -9,7 +9,7 @@ class ComposerStaticInit0d9fccbdd2ceb984fca9a63ce4b2b46d
     public static $prefixLengthsPsr4 = array (
         'c' => 
         array (
-            'coolname\\Hw4\\' => 13,
+            'coolname\\' => 9,
         ),
         'P' => 
         array (
@@ -22,7 +22,7 @@ class ComposerStaticInit0d9fccbdd2ceb984fca9a63ce4b2b46d
     );
 
     public static $prefixDirsPsr4 = array (
-        'coolname\\Hw4\\' => 
+        'coolname\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
         ),
@@ -139,6 +139,9 @@ class ComposerStaticInit0d9fccbdd2ceb984fca9a63ce4b2b46d
         'coolname\\Hw4\\src\\configs\\CreateDB' => __DIR__ . '/../..' . '/src/configs/CreateDB.php',
         'coolname\\Hw4\\src\\controllers\\editController' => __DIR__ . '/../..' . '/src/controllers/editController.php',
         'coolname\\Hw4\\src\\controllers\\landingController' => __DIR__ . '/../..' . '/src/controllers/landingController.php',
+        'coolname\\Hw4\\src\\models\\editModel' => __DIR__ . '/../..' . '/src/models/editModel.php',
+        'coolname\\Hw4\\src\\models\\landingModel' => __DIR__ . '/../..' . '/src/models/landingModel.php',
+        'coolname\\Hw4\\src\\models\\mainModel' => __DIR__ . '/../..' . '/src/models/mainModel.php',
         'coolname\\Hw4\\src\\views\\layouts\\editLayout' => __DIR__ . '/../..' . '/src/views/layouts/editLayout.php',
         'coolname\\Hw4\\src\\views\\layouts\\landingLayout' => __DIR__ . '/../..' . '/src/views/layouts/landingLayout.php',
         'coolname\\Hw4\\src\\views\\layouts\\readLayout' => __DIR__ . '/../..' . '/src/views/layouts/readLayout.php',
