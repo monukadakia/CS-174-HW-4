@@ -13,7 +13,7 @@ class editModel extends mainModel
     }
 
     function fetch_name($spreadCheck){
-    	return $this->obj->db->fetch_spread_name("Select '$spreadCheck' from SHEET");
+    	return $this->obj->db->fetch_spread_name("Select sheet_name from SHEET where sheet_name = '$spreadCheck'");
     }
 
     function fetch_data(){
@@ -22,7 +22,7 @@ class editModel extends mainModel
 
     function store_name($spreadCheck)
     {
-    	 $this->obj->db->storeInDB("Insert into SHEETS VALUES(DEFAULT, '$spreadCheck', '[hello]')");
+    	 $this->obj->db->storeInDB("insert into SHEET VALUES(DEFAULT, '$spreadCheck', '[hello]')");
     }
 
 }

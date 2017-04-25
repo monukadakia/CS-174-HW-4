@@ -27,20 +27,22 @@ class CreateDB {
 
     function fetch_spread_name($query)
     {
-        if($spread_name = $this->mySql->$query($query))
+        if($spread_name = $this->mySql->query($query))
         {
             $name = $spread_name->fetch_assoc();
             return $name;
         }
+        return null;
     }
 
     function fetch_spread_data($query)
     {
-        if($spread_data = $this->mySql->$query($query))
+        if($spread_data = $this->mySql->query($query))
         {
             $data = $spread_data->fetch_assoc();
             return $data;
         }
+        return null;
     }
 }
 new CreateDB();

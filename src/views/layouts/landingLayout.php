@@ -3,8 +3,6 @@
 namespace coolname\Hw4\src\views\layouts;
 use coolname\Hw4\src\views\mainView;
 
-use coolname\Hw4\src\controllers\editController;
-
 
 class landingLayout extends mainView {
 
