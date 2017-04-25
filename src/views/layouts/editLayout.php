@@ -15,7 +15,8 @@ class editLayout extends mainView {
 
     function renderBody(){
         ?>
-        <h1> <a href="index.php?c=landing&m=landingView"> Web Sheets</a> : </h1><h1 id="webSheetName"><?php echo $_REQUEST['webSheetName'] ?></h1>
+        <h1 style="display: inline;"> <a href="index.php?c=landing&m=landingView"> Web Sheets</a> : </h1>
+        <h1 style="display: inline;" id="webSheetName"><?php echo $_REQUEST['webSheetName'] ?></h1><br>
 
         <label id="editURL"> Edit Url:</label><input type="text" name="editURL"/><br/>
         <label id="readURL"> Read Url:</label><input type="text" name="readURL"/><br/>
