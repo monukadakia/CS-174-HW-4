@@ -17,7 +17,7 @@ class editModel extends mainModel
     }
 
     function fetch_data(){
-    	return $this->obj->db->fetch_spread_data("");
+    	return $this->obj->db->fetch_spread_data("Select sheet_data from SHEET where sheet_name = '$spreadCheck'");
     }
 
     function store_name($spreadCheck, $hashCodes)
