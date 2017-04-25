@@ -24,7 +24,7 @@ class editLayout extends mainView {
 
         <div id="spreadSheet">
             <script>
-                var sheet = new Spreadsheet('spreadSheet', '[["Tom"],["Sally"]]', {"mode":"write"});
+                var sheet = new Spreadsheet('spreadSheet', '[[""]]', {"mode":"write"});
                 sheet.draw();
             </script>
         </div>
