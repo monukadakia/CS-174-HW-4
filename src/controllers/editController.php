@@ -17,10 +17,8 @@ class editController{
     {
         $hashCodes = [];
         $obj = new Model\editModel();
-        $this->displayEditLayout();
 
         $spreadName = $_REQUEST['webSheetName'];
-
 
         $hashr = substr(\hash("md5", $spreadName.'r'), 0, 8);
         $hashe = substr(\hash("md5", $spreadName.'e'), 0, 8);
@@ -30,14 +28,19 @@ class editController{
         $hashCodes['f'] = substr(hexdec($hashf), 0, 8);
 
         $name = $obj->fetch_name($spreadName);
+
+
         if(!isset($name))
         {
             $obj->store_name($spreadName, $hashCodes);
         }
+
+
+        $this->displayEditLayout($hashCodes);
     }
 
-    function displayEditLayout(){
-        new Main\layouts\editLayout();
+    function displayEditLayout($hashCodes){
+        new Main\layouts\editLayout($hashCodes);
     }
 }
 

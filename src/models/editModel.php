@@ -24,6 +24,7 @@ class editModel extends mainModel
     {
     	 $this->obj->db->storeInDB("insert into SHEET VALUES(DEFAULT, '$spreadCheck', '[hello]')");
          $sheet_id = $this->obj->db->get_sheet_id("select sheet_id from SHEET where sheet_name = '$spreadCheck'");
+
     	 if(isset($sheet_id)){
     	     $hashr = $hashCodes['r'];
              $this->obj->db->storeInDB("insert into SHEET_CODES VALUES('$sheet_id','$hashr', 'r')");
