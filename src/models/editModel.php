@@ -3,7 +3,7 @@
 namespace coolname\Hw4\src\models;
 use coolname\Hw4\src\configs\CreateDB;
 
-class editModelModel extends mainModel
+class editModel extends mainModel
 {
     public $obj;
 

@@ -10,6 +10,7 @@ namespace coolname\Hw4\src\controllers;
 
 use coolname\Hw4\src\views as Main;
 use coolname\Hw4\src\models as Model;
+
 class editController{
 
     function __construct()
@@ -18,7 +19,6 @@ class editController{
         $this->displayEditLayout();
 
         $spreadName = $_REQUEST['webSheetName'];
-
         $name = $obj->fetch_name($spreadName);
         if(!isset($name))
         {
