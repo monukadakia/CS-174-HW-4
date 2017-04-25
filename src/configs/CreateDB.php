@@ -30,7 +30,7 @@ class CreateDB {
         if($spread_name = $this->mySql->query($query))
         {
             $name = $spread_name->fetch_assoc();
-            return $name;
+            return $name['sheet_name'];
         }
         return null;
     }
@@ -48,8 +48,8 @@ class CreateDB {
     function get_sheet_id($query){
 
         if($id = $this->mySql->query($query)){
-            $sheet_id = $id->fetch_assoc();
-            return $sheet_id;
+            $spread_sheet_id = $id->fetch_assoc();
+            return $spread_sheet_id['sheet_id'];
         }
     }
 }
