@@ -15,7 +15,8 @@ class editLayout extends mainView {
 
     function renderBody($hashCodes){
         ?>
-        <h1> <a href="index.php?c=landing&m=landingView"> Web Sheets</a> : <?php echo $_REQUEST['webSheetName'];?></h1>
+        <h1 style="display: inline;"> <a href="index.php?c=landing&m=landingView"> Web Sheets</a> : </h1>
+        <h1 style="display: inline;" id="webSheetName"><?php echo $_REQUEST['webSheetName'] ?></h1><br>
         <?php
             $hashr = ''; $hashe = ''; $hashf = '';
             if(!isset($_REQUEST['arg1'])) {
