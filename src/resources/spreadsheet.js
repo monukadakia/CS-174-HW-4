@@ -98,7 +98,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                 var item = "";
                 if (typeof data[i][j] == 'string') {
                     item = data[i][j];
-                    while (item.charAt(0) == '=') {
+                    if (item.charAt(0) == '=') {
                         item = self.evaluateCell(item.substring(1), 0)[1];
                     }
                 }
