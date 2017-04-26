@@ -23,6 +23,11 @@ class fileLayout
 
     function __construct($data)
     {
+
+        echo "&lt;"."?xml version='1.0' encoding='UTF-8'?>"."<br/>";
+        echo "&lt;"."!DOCTYPE spreadsheet SYSTEM 'spreadsheet.dtd' >"."<br/>";
+
+
         $this->indent =  str_repeat('&nbsp;', 10);
 
         $this->sheetStartTag = $this->makeStartTag("spreadsheet");
