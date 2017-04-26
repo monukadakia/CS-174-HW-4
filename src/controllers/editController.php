@@ -28,8 +28,7 @@ class editController{
             switch ($codeType) {
                 case 'r':
                     $spreadName = $obj->fetch_id($spreadName);
-                        header("Location:index.php?c=read&webSheetName=".$spreadName);
-                        break;
+                    header("Location:index.php?c=read&webSheetName=".$spreadName);
                     break;
                 case 'e':
                     $spreadName = $obj->fetch_id($spreadName);

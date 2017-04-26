@@ -9,7 +9,7 @@ use coolname\Hw4\src\controllers as Control;
 
 
 $activity = (isset($_REQUEST['c']) && in_array($_REQUEST['c'], [
-		"landing", "edit", "read"])) ? $_REQUEST['c'] . "Controller":"landingController";
+		"landing", "edit", "read", "file"])) ? $_REQUEST['c'] . "Controller":"landingController";
 
 
 if ($activity == 'landingController') {
@@ -20,4 +20,7 @@ else if ($activity == 'editController'){
 }
 else if($activity == 'readController') {
     new Control\readController();
+}
+else if($activity == 'fileController'){
+    new Control\fileController();
 }

@@ -4,7 +4,6 @@ namespace coolname\Hw4\src\views\layouts;
 
 use coolname\Hw4\src\views\mainView;
 
-require_once __DIR__."/../mainView.php";
 
 class readLayout extends mainView {
 
