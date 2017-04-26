@@ -3,8 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Hw4.iml" filepath="$PROJECT_DIR$/.idea/Hw4.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../Hw3/.idea/hw3.iml" filepath="$PROJECT_DIR$/../Hw3/.idea/hw3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../inClassExercise/.idea/inClassExercise.iml" filepath="$PROJECT_DIR$/../inClassExercise/.idea/inClassExercise.iml" />
     </modules>
   </component>
 </project>

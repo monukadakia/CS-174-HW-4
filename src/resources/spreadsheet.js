@@ -74,7 +74,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         var add_button = "";
         var delete_button = "";
         var pre_delete_button = "";
-        if (self.mode == 'write') {
+        if (self.mode === 'write') {
             table += "<input id='" + self.data_id+ "' type='hidden' " +
                 "name='" + self.data_name + "' value='" + JSON.stringify(
                 data)+ "' />";
