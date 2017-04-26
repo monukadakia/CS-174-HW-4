@@ -40,7 +40,7 @@ class CreateDB {
         if($spread_data = $this->mySql->query($query))
         {
             $data = $spread_data->fetch_assoc();
-            return $data;
+            return $data['sheet_data'];
         }
         return null;
     }

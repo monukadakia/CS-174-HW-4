@@ -7,14 +7,15 @@ use coolname\Hw4\src\views\mainView;
 
 class editLayout extends mainView {
 
-    function __construct($hashCodes){
+    function __construct($hashCodes, $data){
         $this->renderHeader();
-        $this->renderBody($hashCodes);
+        $this->renderBody($hashCodes, $data);
         $this->renderFooter();
     }
 
-    function renderBody($hashCodes){
+    function renderBody($hashCodes, $data){
         ?>
+
         <h1 style="display: inline;"> <a href="index.php?c=landing&m=landingView"> Web Sheets</a> : </h1>
         <h1 style="display: inline;" id="webSheetName"><?php echo $_REQUEST['webSheetName'] ?></h1><br>
         <?php
@@ -31,7 +32,7 @@ class editLayout extends mainView {
 
         <div id="spreadSheet">
             <script>
-                var sheet = new Spreadsheet('spreadSheet', '[[""]]', {"mode":"write"});
+                var sheet = new Spreadsheet('spreadSheet', <?php echo json_encode($data);?>, {"mode":"write"});
                 sheet.draw();
             </script>
         </div>

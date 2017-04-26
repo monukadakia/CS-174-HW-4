@@ -28,19 +28,22 @@ class editController{
         $hashCodes['f'] = substr(hexdec($hashf), 0, 8);
 
         $name = $obj->fetch_name($spreadName);
-
-
+        $data = null;
         if(!isset($name))
         {
             $obj->store_name($spreadName, $hashCodes);
+            $data = "[['']]";
+        }
+        else{
+            $data = $obj->fetch_data($spreadName);
         }
 
 
-        $this->displayEditLayout($hashCodes);
+        $this->displayEditLayout($hashCodes, $data);
     }
 
-    function displayEditLayout($hashCodes){
-        new Main\layouts\editLayout($hashCodes);
+    function displayEditLayout($hashCodes, $data){
+        new Main\layouts\editLayout($hashCodes, $data);
     }
 }
 
