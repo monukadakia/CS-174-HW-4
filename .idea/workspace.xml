@@ -11,17 +11,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../src/resources/readme.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../src/styles/readme.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../src/views/readme.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Hw4.iml" afterPath="$PROJECT_DIR$/.idea/Hw4.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/readController.php" afterPath="$PROJECT_DIR$/src/controllers/readController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/models/readModel.php" afterPath="$PROJECT_DIR$/src/models/readModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/resources/spreadsheet.js" afterPath="$PROJECT_DIR$/src/resources/spreadsheet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/layouts/editLayout.php" afterPath="$PROJECT_DIR$/src/views/layouts/editLayout.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/editController.php" afterPath="$PROJECT_DIR$/src/controllers/editController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/layouts/readLayout.php" afterPath="$PROJECT_DIR$/src/views/layouts/readLayout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,15 +28,15 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="editController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="editController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controllers/editController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            <state relative-caret-position="358">
+              <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
               <folding>
                 <element signature="e#6#91#0#PHP" expanded="true" />
                 <element signature="e#134#169#0#PHP" expanded="true" />
-                <marker date="1493186431000" expanded="true" signature="258:328" ph="{...}" />
+                <marker date="1493189108000" expanded="true" signature="258:328" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -75,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="readLayout.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="readLayout.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/views/layouts/readLayout.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+            <state relative-caret-position="555">
+              <caret line="37" column="2" lean-forward="true" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -91,6 +83,18 @@
             <state relative-caret-position="75">
               <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="14" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="editLayout.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/views/layouts/editLayout.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding>
+                <element signature="e#49#85#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,12 +129,12 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/src/configs/CreateDB.php" />
         <option value="$PROJECT_DIR$/src/models/editModel.php" />
-        <option value="$PROJECT_DIR$/src/controllers/editController.php" />
         <option value="$PROJECT_DIR$/src/views/layouts/editLayout.php" />
         <option value="$PROJECT_DIR$/src/resources/spreadsheet.js" />
         <option value="$PROJECT_DIR$/src/models/readModel.php" />
         <option value="$PROJECT_DIR$/src/controllers/readController.php" />
         <option value="$PROJECT_DIR$/src/views/layouts/readLayout.php" />
+        <option value="$PROJECT_DIR$/src/controllers/editController.php" />
       </list>
     </option>
   </component>
@@ -381,12 +385,12 @@
       <workItem from="1493013105267" duration="699000" />
       <workItem from="1493020479121" duration="676000" />
       <workItem from="1493049891966" duration="9594000" />
-      <workItem from="1493186464068" duration="2047000" />
+      <workItem from="1493186464068" duration="2346000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26454000" />
+    <option name="totallyTimeSpent" value="26753000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -480,7 +484,7 @@
           <folding>
             <element signature="e#6#91#0#PHP" expanded="true" />
             <element signature="e#134#169#0#PHP" expanded="true" />
-            <marker date="1493186431000" expanded="true" signature="258:328" ph="{...}" />
+            <marker date="1493189108000" expanded="true" signature="258:328" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -539,7 +543,7 @@
           <folding>
             <element signature="e#6#91#0#PHP" expanded="true" />
             <element signature="e#134#169#0#PHP" expanded="true" />
-            <marker date="1493186431000" expanded="true" signature="258:328" ph="{...}" />
+            <marker date="1493189108000" expanded="true" signature="258:328" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -550,8 +554,6 @@
           <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
           <folding>
             <element signature="e#49#85#0#PHP" expanded="true" />
-            <marker date="1493187093000" expanded="true" signature="1434:1500" ph="..." />
-            <marker date="1493187093000" expanded="true" signature="1455:1500" ph="..." />
           </folding>
         </state>
       </provider>
@@ -720,30 +722,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/editController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="17" column="10" lean-forward="false" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding>
-            <element signature="e#6#91#0#PHP" expanded="true" />
-            <element signature="e#134#169#0#PHP" expanded="true" />
-            <marker date="1493186431000" expanded="true" signature="258:328" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/views/layouts/editLayout.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="108" lean-forward="false" selection-start-line="31" selection-start-column="108" selection-end-line="31" selection-end-column="108" />
-          <folding>
-            <element signature="e#49#85#0#PHP" expanded="true" />
-            <marker date="1493187093000" expanded="true" signature="1434:1500" ph="..." />
-            <marker date="1493187093000" expanded="true" signature="1455:1500" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -851,6 +829,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/views/layouts/editLayout.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="e#49#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/views/mainView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -861,9 +849,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/layouts/readLayout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" lean-forward="false" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="555">
+          <caret line="37" column="2" lean-forward="true" selection-start-line="37" selection-start-column="2" selection-end-line="37" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/editController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="31" column="24" lean-forward="false" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+            <element signature="e#134#169#0#PHP" expanded="true" />
+            <marker date="1493189108000" expanded="true" signature="258:328" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

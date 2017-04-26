@@ -18,13 +18,14 @@ class readLayout extends mainView {
         ?>
         <h1> <a href="index.php"> Web Sheets: title of Sheet </a></h1>
         <?php
+        $url = 'localhost/Hw4/index.php?c=';
         $hashf = '';
         if(!isset($_REQUEST['arg1'])) {
             $hashf = '&arg1='.$hashCodes['f'];
         }
         ?>
 
-        <label id="fileURL"> File Url:</label><input type="text" name="fileURL" value="<?php echo 'localhost'.$_SERVER['REQUEST_URI'].$hashf;?>"/><br/>
+        <label id="fileURL"> File Url:</label><input type="text" name="fileURL" value="<?php echo $url.'file&webSheetName='.$_REQUEST['webSheetName'].$hashf;?>"/><br/>
         <div id="spreadSheet">
             <script>
                 var sheet = new Spreadsheet('spreadSheet', <?php echo json_encode($data);?>);
