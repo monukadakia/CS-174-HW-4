@@ -35,6 +35,8 @@ class editController{
                     header("Location:index.php?c=edit&webSheetName=".$spreadName);
                     break;
                 case 'f':
+                    $spreadName = $obj->fetch_id($spreadName);
+                    header("Location:index.php?c=file&webSheetName=".$spreadName);
                     break;
                 default:
                     $this->default_page($spreadName);
