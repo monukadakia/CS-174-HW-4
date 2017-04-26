@@ -17,9 +17,33 @@ class editController{
     {
         $hashCodes = [];
         $obj = new Model\editModel();
-
         $spreadName = $_REQUEST['webSheetName'];
 
+        if(preg_match("/[a-z]/i", $spreadName)){
+           $this->default_page($spreadName);
+        }
+        else
+        {
+            $codeType = $obj->fetch_hash($spreadName);
+            switch ($codeType) {
+                case 'r':
+                    break;
+                case 'e':
+                    $spreadName = $obj->fetch_id($spreadName);
+                    header("Location:index.php?c=edit&webSheetName=".$spreadName);
+                    break;
+                case 'f':
+                    break;
+                default:
+                    $this->default_page($spreadName);
+                    break;
+            }
+        }
+    }
+
+    function default_page($spreadName)
+    {
+        $obj = new Model\editModel();
         $hashr = substr(\hash("md5", $spreadName.'r'), 0, 8);
         $hashe = substr(\hash("md5", $spreadName.'e'), 0, 8);
         $hashf = substr(\hash("md5", $spreadName.'f'), 0, 8);
@@ -40,8 +64,6 @@ class editController{
                 $data = "[['']]";
             }
         }
-
-
         $this->displayEditLayout($hashCodes, $data);
     }
 

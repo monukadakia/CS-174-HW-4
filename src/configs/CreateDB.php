@@ -45,6 +45,16 @@ class CreateDB {
         return null;
     }
 
+    function fetch_spread_hash($query)
+    {
+        if($spread_hash = $this->mySql->query($query))
+        {
+            $hash = $spread_hash->fetch_assoc();
+            return $hash['code_type'];
+        }
+        return null;
+    }
+
     function get_sheet_id($query){
 
         if($id = $this->mySql->query($query)){

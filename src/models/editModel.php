@@ -20,6 +20,14 @@ class editModel extends mainModel
     	return $this->obj->db->fetch_spread_data("Select sheet_data from SHEET where sheet_name = '$spreadCheck'");
     }
 
+    function fetch_hash($spreadCheck){
+        return $this->obj->db->fetch_spread_hash("Select code_type from SHEET_CODES where hash_code = '$spreadCheck'");
+    }
+
+    function fetch_id($spreadCheck){
+        return $this->obj->db->fetch_spread_name("select sheet_name from SHEET where sheet_id = (select sheet_id from SHEET_CODES where hash_code = '$spreadCheck')");
+    }
+
     function store_name($spreadCheck, $hashCodes)
     {
     	 $this->obj->db->storeInDB("insert into SHEET VALUES(DEFAULT, '$spreadCheck', '')");
