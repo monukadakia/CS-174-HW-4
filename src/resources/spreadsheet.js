@@ -238,12 +238,6 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         return [parseInt(cell_parts[2]), column];
     }
 
-
-    p.sayHello = function () {
-        document.write("Hello world");
-        document.getElementById(spreadsheet_id).innerHTML = "<p>"+ "You have " + timeCounter + " seconds left!!" + "</p>";
-    }
-
     /**
      * Callback for click events on spreadsheet. Determines if the event
      * occurred on a spreadsheet cell. If so, it opens a prompt for a

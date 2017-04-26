@@ -26,8 +26,8 @@ class editLayout extends mainView {
                 $hashf = '&arg1='.$hashCodes['f'];
             }
         ?>
-        <label id="editURL"> Edit Url:</label><input type="text" name="editURL" value="<?php echo 'localhost'.$_SERVER['REQUEST_URI'].$hashr;?>"/><br/>
-        <label id="readURL"> Read Url:</label><input type="text" name="readURL" value="<?php echo 'localhost'.$_SERVER['REQUEST_URI'].$hashe;?>"/><br/>
+        <label id="editURL"> Edit Url:</label><input type="text" name="editURL" value="<?php echo 'localhost'.$_SERVER['REQUEST_URI'].$hashe;?>"/><br/>
+        <label id="readURL"> Read Url:</label><input type="text" name="readURL" value="<?php echo 'localhost'.$_SERVER['REQUEST_URI'].$hashr;?>"/><br/>
         <label id="fileURL"> File Url:</label><input type="text" name="fileURL" value="<?php echo 'localhost'.$_SERVER['REQUEST_URI'].$hashf;?>"/><br/>
 
         <div id="spreadSheet">
