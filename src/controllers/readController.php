@@ -15,18 +15,10 @@ class readController{
         $spreadName = $_REQUEST['webSheetName'];
         $hashf = substr(\hash("md5", $spreadName.'f'), 0, 8);
         $hashCodes['f'] = substr(hexdec($hashf), 0, 8);
-        $data = null;
-        if(!isset($name))
-        {
+        $data = $obj->fetch_data($spreadName);
+        if($data==""){
             $data = "[['']]";
         }
-        else{
-            $data = $obj->fetch_data($spreadName);
-            if($data==""){
-                $data = "[['']]";
-            }
-        }
-
         $this->displayReadLayout($hashCodes, $data);
     }
 
