@@ -22,7 +22,7 @@ class editModel extends mainModel
 
     function store_name($spreadCheck, $hashCodes)
     {
-    	 $this->obj->db->storeInDB("insert into SHEET VALUES(DEFAULT, '$spreadCheck', '[hello]')");
+    	 $this->obj->db->storeInDB("insert into SHEET VALUES(DEFAULT, '$spreadCheck', '')");
          $sheet_id = $this->obj->db->get_sheet_id("select sheet_id from SHEET where sheet_name = '$spreadCheck'");
 
     	 if(isset($sheet_id)){

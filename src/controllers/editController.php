@@ -36,6 +36,9 @@ class editController{
         }
         else{
             $data = $obj->fetch_data($spreadName);
+            if($data==""){
+                $data = "[['']]";
+            }
         }
 
 
