@@ -15,7 +15,8 @@ class readLayout extends mainView {
 
     function renderBody($hashCodes,$data){
         ?>
-        <h1> <a href="index.php"> Web Sheets: title of Sheet </a></h1>
+        <h1 style="display: inline;"> <a href="index.php"> Web Sheets</a> : </h1>
+        <h1 style="display: inline;" id="webSheetName"><?php echo $_REQUEST['webSheetName'] ?></h1><br>
         <?php
         $url = 'localhost/Hw4/index.php?c=';
         $hashf = '';
