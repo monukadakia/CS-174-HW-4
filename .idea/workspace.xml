@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b9849ae-7c0d-4ab8-82d0-c49680217fac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/controllers/fileController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/models/fileModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/views/layouts/fileLayout.php" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../CS-174-HW-4/Untitled.rtf" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../index.php" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../readme.txt" afterPath="" />
@@ -14,12 +11,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../src/resources/readme.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../src/styles/readme.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../src/views/readme.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/controllers/editController.php" afterPath="$PROJECT_DIR$/src/controllers/editController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/layouts/readLayout.php" afterPath="$PROJECT_DIR$/src/views/layouts/readLayout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/views/layouts/fileLayout.php" afterPath="$PROJECT_DIR$/src/views/layouts/fileLayout.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -112,13 +104,13 @@
           <file leaf-file-name="fileLayout.php" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/views/layouts/fileLayout.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1080">
-                  <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+                <state relative-caret-position="92">
+                  <caret line="62" column="52" lean-forward="false" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
                   <folding>
-                    <marker date="1493200915000" expanded="true" signature="1421:1425" ph="&lt;" />
-                    <marker date="1493200915000" expanded="true" signature="1437:1441" ph="&gt;" />
-                    <marker date="1493200915000" expanded="true" signature="1502:1506" ph="&lt;" />
-                    <marker date="1493200915000" expanded="true" signature="1522:1526" ph="&gt;" />
+                    <marker date="1493202040000" expanded="true" signature="1740:1744" ph="&lt;" />
+                    <marker date="1493202040000" expanded="true" signature="1756:1760" ph="&gt;" />
+                    <marker date="1493202040000" expanded="true" signature="1821:1825" ph="&lt;" />
+                    <marker date="1493202040000" expanded="true" signature="1841:1845" ph="&gt;" />
                   </folding>
                 </state>
               </provider>
@@ -163,7 +155,11 @@
       <find>say</find>
       <find>sayH</find>
       <find>==</find>
+      <find>getFirstRowXML</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -439,12 +435,12 @@
       <workItem from="1493013105267" duration="699000" />
       <workItem from="1493020479121" duration="676000" />
       <workItem from="1493049891966" duration="9594000" />
-      <workItem from="1493186464068" duration="9459000" />
+      <workItem from="1493186464068" duration="10555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33866000" />
+    <option name="totallyTimeSpent" value="34962000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
@@ -454,6 +450,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329602" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -465,7 +462,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -935,13 +931,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/views/layouts/fileLayout.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+        <state relative-caret-position="92">
+          <caret line="62" column="52" lean-forward="false" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
           <folding>
-            <marker date="1493200915000" expanded="true" signature="1421:1425" ph="&lt;" />
-            <marker date="1493200915000" expanded="true" signature="1437:1441" ph="&gt;" />
-            <marker date="1493200915000" expanded="true" signature="1502:1506" ph="&lt;" />
-            <marker date="1493200915000" expanded="true" signature="1522:1526" ph="&gt;" />
+            <marker date="1493202040000" expanded="true" signature="1740:1744" ph="&lt;" />
+            <marker date="1493202040000" expanded="true" signature="1756:1760" ph="&gt;" />
+            <marker date="1493202040000" expanded="true" signature="1821:1825" ph="&lt;" />
+            <marker date="1493202040000" expanded="true" signature="1841:1845" ph="&gt;" />
           </folding>
         </state>
       </provider>

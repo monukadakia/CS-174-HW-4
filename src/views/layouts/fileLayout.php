@@ -23,15 +23,15 @@ class fileLayout
 
     function __construct($data)
     {
+        $this->indent =  str_repeat('&nbsp;', 10);
 
         $this->sheetStartTag = $this->makeStartTag("spreadsheet");
         $this->sheetEndTag = $this->makeEndTag("spreadsheet");
-        $this->rowStartTag = $this->makeStartTag("row");
+        $this->rowStartTag = $this->rowStartTag.$this->makeStartTag("row");
         $this->rowEndTag = $this->makeEndTag("row");
-        $this->columnStartTag = $this->makeStartTag("column");
+        $this->columnStartTag = $this->indent.$this->indent.$this->makeStartTag("column");
         $this->columnEndTag = $this->makeEndTag("column");
 
-        $this->indent =  str_repeat('&nbsp;', 10);
 
         $this->data = $data;
 
@@ -56,8 +56,14 @@ class fileLayout
         echo $this->sheetStartTag;
         echo "<br/>";
 
+        echo $this->getColumnHeader(count($data[0]));
 
-        echo $this->getFirstRowXML(count($data[0]));
+        for($row = 1; $row < count($data) + 1; $row++) {
+            echo $this->indent.$this->rowStartTag."<br/>".$this->columnStartTag.$row.$this->columnEndTag."<br/>";
+            echo $this->getColumnData($data[$row - 1]);
+        }
+
+        echo $this->sheetEndTag;
     }
 
     function makeStartTag($tagName){
@@ -68,18 +74,26 @@ class fileLayout
         return "&lt;"."/".$tagName."&gt;";
     }
 
-    function getFirstRowXML($num_of_column){
-        $currentRow = $this->indent.$this->rowStartTag.$this->columnStartTag."".$this->columnEndTag."<br/>";
+    function getColumnHeader($num_of_column){
+        $currentRow = $this->indent.$this->rowStartTag."<br/>".$this->columnStartTag."".$this->columnEndTag."<br/>";
 
         for($i = 0; $i < $num_of_column; $i++){
             $currentRow.= $this->columnStartTag.chr($i + 65).$this->columnEndTag."<br/>";
         }
 
-        return $currentRow.$this->rowEndTag."<br/>";
+        return $currentRow.$this->indent.$this->rowEndTag."<br/>";
+    }
+    
+    function getColumnData($dataFields){
+        $currentRow = "";
+        for($i = 0; $i < count($dataFields); $i++) {
+            $currentRow .= $this->columnStartTag . $dataFields[$i] . $this->columnEndTag . "<br/>";
+        }
+        return $currentRow.$this->indent.$this->rowEndTag."<br/>";
     }
 
     function spreadSheetRowXML($rowData){
-        $currentRow = $this->indent.$this->rowStartTag;
+        $currentRow = $this->rowStartTag;
 
         foreach ($rowData as $columnData){
             $currentRow.= $this->columnStartTag.$columnData.$this->columnEndTag;
