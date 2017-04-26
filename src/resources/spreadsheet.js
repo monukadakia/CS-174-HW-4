@@ -262,7 +262,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                 data_elt = document.getElementById(self.data_id);
                 data_elt.value = JSON.stringify(data);
                 event.target.innerHTML = new_value;
-                ajax_post(data_elt.value);
+                
             }
         } else if (type == 'add' && row == -1 && column >= 0) {
             for (var i = 0; i < length; i++) {
@@ -308,6 +308,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         }
         event.stopPropagation();
         event.preventDefault();
+        ajax_post(data_elt.value);
     }
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);
