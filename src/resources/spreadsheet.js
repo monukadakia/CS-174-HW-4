@@ -98,7 +98,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                 var item = "";
                 if (typeof data[i][j] == 'string') {
                     item = data[i][j];
-                    if (item.charAt(0) == '=') {
+                    while (item.charAt(0) == '=') {
                         item = self.evaluateCell(item.substring(1), 0)[1];
                     }
                 }
@@ -309,6 +309,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         event.stopPropagation();
         event.preventDefault();
         ajax_post(data_elt.value);
+        self.draw();
     }
     if (this.mode == 'write') {
         container.addEventListener("click", self.updateCell, true);
