@@ -13,14 +13,13 @@ use coolname\Hw4\src\models as Model;
 
 class editController{
 
-    function __construct()
+    function __construct($layout)
     {
-        $hashCodes = [];
         $obj = new Model\editModel();
         $spreadName = $_REQUEST['webSheetName'];
 
         if(preg_match("/[a-z]/i", $spreadName)){
-           $this->default_page($spreadName);
+           $this->default_page($spreadName, $layout);
         }
         else
         {
@@ -45,7 +44,7 @@ class editController{
         }
     }
 
-    function default_page($spreadName)
+    function default_page($spreadName, $layout)
     {
         $obj = new Model\editModel();
         $hashr = substr(\hash("md5", $spreadName.'r'), 0, 8);
@@ -68,10 +67,10 @@ class editController{
                 $data = "[['']]";
             }
         }
-        $this->displayEditLayout($hashCodes, $data);
+        $this->$layout($hashCodes, $data);
     }
 
-    function displayEditLayout($hashCodes, $data){
+    function editLayout($hashCodes, $data){
         new Main\layouts\editLayout($hashCodes, $data);
     }
 }

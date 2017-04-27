@@ -9,7 +9,7 @@ use coolname\Hw4\src\models as Model;
 
 class readController{
 
-    function __construct()
+    function __construct($layout)
     {
         $obj = new Model\readModel();
         $spreadName = $_REQUEST['webSheetName'];
@@ -19,10 +19,10 @@ class readController{
         if($data==""){
             $data = "[['']]";
         }
-        $this->displayReadLayout($hashCodes, $data);
+        $this->$layout($hashCodes, $data);
     }
 
-    function displayReadLayout($hashCodes, $data){
+    function readLayout($hashCodes, $data){
         new Main\layouts\readLayout($hashCodes, $data);
     }
 }

@@ -22,17 +22,18 @@ while(!$logSetup){
 
 if ($activity == 'landingController') {
     $logger->info('User has visited the Landing Page.');
-    new Control\landingController();
+    $_REQUEST['m'] = "landingLayout";
+    new Control\landingController($_REQUEST['m'], $_REQUEST['m']);
 }
 else if ($activity == 'editController'){
     $logger->info('User has visited the Edit Page to edit the spreadsheet - '.$_REQUEST['webSheetName']);
-    new Control\editController();
+    new Control\editController($_REQUEST['m']);
 }
 else if($activity == 'readController') {
     $logger->info('User has visited the Read Page to read the spreadsheet - '.$_REQUEST['webSheetName']);
-    new Control\readController();
+    new Control\readController($_REQUEST['m']);
 }
 else if($activity == 'fileController'){
     $logger->info('User has visited the File Page to view the XML version of spreadsheet - '.$_REQUEST['webSheetName']);
-    new Control\fileController();
+    new Control\fileController($_REQUEST['m']);
 }

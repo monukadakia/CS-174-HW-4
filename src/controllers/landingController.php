@@ -13,12 +13,12 @@ use coolname\Hw4\src\views as Main;
 
 class landingController{
 
-    function __construct()
+    function __construct($layout)
     {
-       $this->displayLandingLayout();
+       $this->$layout();
     }
 
-    function displayLandingLayout(){
+    function landingLayout(){
         new Main\layouts\landingLayout();
     }
 }

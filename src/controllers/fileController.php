@@ -13,13 +13,13 @@ use coolname\Hw4\src\models as Model;
 
 class fileController
 {
-    function __construct()
+    function __construct($layout)
     {
         $spreadName = $_REQUEST['webSheetName'];
-        $this->default_page($spreadName);
+        $this->default_page($spreadName, $layout);
     }
 
-    function default_page($spreadName)
+    function default_page($spreadName, $layout)
     {
         $obj = new Model\fileModel();
         $name = $obj->fetch_name($spreadName);
@@ -31,10 +31,10 @@ class fileController
         else{
             $data = $obj->fetch_data($spreadName);
         }
-        $this->display_fileLayout($data);
+        $this->$layout($data);
     }
 
-    function display_fileLayout($data){
+    function fileLayout($data){
         new Main\layouts\fileLayout($data);
     }
 }
