@@ -1,1 +1,0 @@
-Need to fix the textfield on read and edit layout. 

@@ -1,0 +1,6 @@
+Title: Avg not working in row form
+Assigned to: Kirtan
+Description: The when you take avg. in columns in works but it doesn't work in rows. We might have to write another loop to navigate in the rows.
+
+Solution:
+First of all I added the while loop. In the while loop, I incremented the alphabets because in row average, the range numbers will be the same but the alphabet will increase. Until the lowest alphabet is not the max alphabet, it will loop through and add the equation to the variable "final". Once the final is done, I call the evaluatecell with final. It works perfectly now.

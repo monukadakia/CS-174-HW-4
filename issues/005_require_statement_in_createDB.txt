@@ -1,0 +1,6 @@
+Title: Require statement in createDB()
+Assigned to: Yash
+Description: We must have a require statement in index.php only. There is a require statement in createDB() which must be removed.
+
+Solution:
+I updated the composer.json file. After updating the .json, the require statement in index.php takes care of requiring the file required in the respective classes.

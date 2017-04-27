@@ -1,0 +1,6 @@
+Title: Link on "Web Sheets" 
+Assigned to: Yash
+Description: When the user clicks on the Web Sheets at the top of the page, he/she should be directed back to the landing page. This should be regardless of what page the user is currently on.
+
+Solution:
+Added an href attribute within the a tag

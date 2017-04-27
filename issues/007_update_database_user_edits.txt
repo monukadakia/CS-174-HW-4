@@ -1,0 +1,6 @@
+Title: Update Database when user edits a sheet
+Assigned to: Mohnish
+Description: Every time users create a new sheet, or edit a previous spreadsheet, we need to create an XmlHttpRequest to save the data in the database, using an api controller.
+
+Solution:
+This was handled in the editController. The spreadsheet.js file was partial code and I had to add some code to update every time the user edits a cell. Initially it only updated if the it was blank.

@@ -1,0 +1,6 @@
+Title: Displaying the Spreadsheet
+Assigned to: Mohnish
+Description: Use the starter code to figure out how to draw the spreadsheet on edit and read page.
+
+Solution:
+I added script tags in the editview to test the spreadsheet.js code. I linked that spreadsheet and then tested it by creating a new spreadsheeet

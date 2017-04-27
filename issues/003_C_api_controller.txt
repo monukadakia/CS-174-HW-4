@@ -1,0 +1,6 @@
+Title: C= api
+Assigned to: Kirtan
+Description: Right now it still calls c=edit when updating the cells. But it should call c = api when the user updates the cell.
+
+Solution:
+I added the relocation to the main page with c=api in the url.

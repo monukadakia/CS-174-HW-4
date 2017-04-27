@@ -1,0 +1,8 @@
+Title: The landing input to search for spreadsheet or hashcode
+Assigned to: Mohnish
+Description: non-(alphanumeric or space) characters should not be accepted and an alert should be displayed for the user. The form should not submit. The form currently submits.
+
+Solution: I added a red var to ensure that the input does not have any other symbols. This code fixes the problem.
+var reg = /[^A-Za-z0-9 ]/;
+if(!input.match(reg)){
+}
