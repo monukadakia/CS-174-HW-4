@@ -27,18 +27,21 @@ class editController{
             switch ($codeType) {
                 case 'r':
                     $spreadName = $obj->fetch_id($spreadName);
+                    echo $spreadName;
                     header("Location:index.php?c=read&m=readLayout&webSheetName=".$spreadName);
                     break;
                 case 'e':
                     $spreadName = $obj->fetch_id($spreadName);
+                    echo $spreadName;
                     header("Location:index.php?c=edit&m=editLayout&webSheetName=".$spreadName);
                     break;
                 case 'f':
                     $spreadName = $obj->fetch_id($spreadName);
+                    echo $spreadName;
                     header("Location:index.php?c=file&m=fileLayout&webSheetName=".$spreadName);
                     break;
                 default:
-                    $this->default_page($spreadName);
+                    $this->default_page($spreadName, $layout);
                     break;
             }
         }
