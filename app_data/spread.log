@@ -182,6 +182,7 @@
 [2017-04-27 04:26:39] general.INFO: User has visited the Landing Page. [] []
 =======
 >>>>>>> 9d6e413a710afd21aa35efa0c9d152fdd9255d9d
+<<<<<<< HEAD
 >>>>>>> f5b71612d77ecc408b43690d6c6e090966193fe6
 [2017-04-27 04:51:22] general.INFO: User has visited the Edit Page to edit the spreadsheet - Hola [] []
 [2017-04-27 04:51:29] general.INFO: User has visited the Landing Page. [] []
@@ -210,3 +211,30 @@
 [2017-04-27 04:55:45] general.INFO: User has visited the Edit Page to edit the spreadsheet - 31138664 [] []
 [2017-04-27 04:55:45] general.INFO: User has visited the Read Page to read the spreadsheet - HOla [] []
 [2017-04-27 04:55:56] general.INFO: User has visited the Landing Page. [] []
+=======
+[2017-04-27 04:48:32] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:50:10] general.INFO: User has visited the Edit Page to edit the spreadsheet - 33155978 [] []
+[2017-04-27 04:50:41] general.INFO: User has visited the Edit Page to edit the spreadsheet - 33155978 [] []
+[2017-04-27 04:52:54] general.INFO: User has visited the Edit Page to edit the spreadsheet - 33155978 [] []
+[2017-04-27 04:53:01] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:53:02] general.INFO: User has visited the Edit Page to edit the spreadsheet - 36186261 [] []
+[2017-04-27 04:53:02] general.INFO: User has visited the Read Page to read the spreadsheet - 33155978 [] []
+[2017-04-27 04:54:20] general.INFO: User has visited the Edit Page to edit the spreadsheet - 36186261 [] []
+[2017-04-27 04:54:20] general.INFO: User has visited the Read Page to read the spreadsheet - 33155978 [] []
+[2017-04-27 04:54:36] general.INFO: User has visited the Edit Page to edit the spreadsheet - 19974970 [] []
+[2017-04-27 04:54:36] general.INFO: User has visited the Read Page to read the spreadsheet - kirtan [] []
+[2017-04-27 04:55:10] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
+[2017-04-27 04:55:21] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:55:34] general.INFO: User has visited the Edit Page to edit the spreadsheet - 19974970 [] []
+[2017-04-27 04:55:34] general.INFO: User has visited the Read Page to read the spreadsheet - kirtan [] []
+[2017-04-27 04:55:42] general.INFO: User has visited the Edit Page to edit the spreadsheet - 30614590 [] []
+[2017-04-27 04:55:42] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
+[2017-04-27 04:55:55] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:55:57] general.INFO: User has visited the Edit Page to edit the spreadsheet - 19974970 [] []
+[2017-04-27 04:55:57] general.INFO: User has visited the Read Page to read the spreadsheet - kirtan [] []
+[2017-04-27 04:56:05] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:56:06] general.INFO: User has visited the Edit Page to edit the spreadsheet - 25818136 [] []
+[2017-04-27 04:56:06] general.INFO: User has visited the File Page to view the XML version of spreadsheet - kirtan [] []
+[2017-04-27 04:56:16] general.INFO: User has visited the Edit Page to edit the spreadsheet - 30614590 [] []
+[2017-04-27 04:56:16] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
+>>>>>>> 516dbef64a9f040ec5a4bc23b9f27e10bf63e5d9
