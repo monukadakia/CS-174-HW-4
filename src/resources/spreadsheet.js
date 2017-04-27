@@ -113,9 +113,10 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                         var final = "";
                         var n = /\d+/g;
                         var range = item.match(n);
+                        var min_alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2); 
+                        var max_alp = item.substring(item.indexOf(":")+1, item.indexOf(":") + 2);
                         if(range[0] == range[1]){
-                           var min_alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2); 
-                           var max_alp = item.substring(item.indexOf(":")+1, item.indexOf(":") + 2);
+
                            var tmp = "";
                            var min = parseInt(range[0]);
                            var check = 0;
@@ -138,7 +139,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                             item = self.evaluateCell(final.substring(1), 0)[1];
                             item = item/check;
                         } 
-                        else
+                        else if(min_alp == max_alp)
                         {
                             var alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2);
                             var tmp = "";
@@ -157,6 +158,31 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                             final = "=" + final;
                             item = self.evaluateCell(final.substring(1), 0)[1];
                             item = item/div;
+                        }
+                        else
+                        {
+                            var tmp = "";
+                            var count = 0;
+                            while(min_alp != incAlp(max_alp))
+                            {
+                                for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
+                                    if(tmp == ""){
+                                        tmp = "(" + min_alp + min + "+" + min_alp + (min+1) + ")";
+                                        min++;
+                                        final += tmp;
+                                        count++;
+                                    }
+                                    else{
+                                        final = "(" + tmp + "+" + min_alp + min + ")";
+                                        tmp = final;
+                                    }
+                                    count++;
+                                }
+                                min_alp = incAlp(min_alp);
+                            }
+                            final = "=" + final;
+                            item = self.evaluateCell(final.substring(1), 0)[1];
+                            item = item/count;
                         }
                     }
                 }
