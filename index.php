@@ -13,7 +13,7 @@ $logger = null;
 
 
 $activity = (isset($_REQUEST['c']) && in_array($_REQUEST['c'], [
-		"landing", "edit", "read", "file"])) ? $_REQUEST['c'] . "Controller":"landingController";
+		"landing", "edit", "read", "file", "api"])) ? $_REQUEST['c'] . "Controller":"landingController";
 
 while(!$logSetup){
     $logger = new Logger('general');
@@ -26,7 +26,7 @@ if ($activity == 'landingController') {
     $_REQUEST['m'] = "landingLayout";
     new Control\landingController($_REQUEST['m'], $_REQUEST['m']);
 }
-else if ($activity == 'editController'){
+else if ($activity == 'editController' || $activity == 'apiController'){
     $logger->info('User has visited the Edit Page to edit the spreadsheet - '.$_REQUEST['webSheetName']);
     new Control\editController($_REQUEST['m']);
 }

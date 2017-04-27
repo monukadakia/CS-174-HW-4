@@ -233,7 +233,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                 }
             }
             item = item/count;
-            console.log(item);
+            //console.log(item);
         }
         return item;
     }
@@ -438,6 +438,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         event.stopPropagation();
         event.preventDefault();
         ajax_post(JSON.stringify(data));
+        //console.log("Data is " + JSON.stringify(data));
         self.draw();
     }
     if (this.mode == 'write') {
@@ -449,7 +450,7 @@ function ajax_post(data){
     // Create our XMLHttpRequest object
     var hr = new XMLHttpRequest();
     // Create some variables we need to send to our PHP file
-    var url = "test.php";
+    var url = "src/controllers/ApiController.php";
     var webSheetName = document.getElementById("webSheetName").innerHTML;
     var vars = "data=" + encodeURIComponent(data) + "&webSheetName=" + webSheetName;
     hr.open("POST", url, true);
@@ -459,7 +460,8 @@ function ajax_post(data){
     hr.onreadystatechange = function() {
         if(hr.readyState == 4 && hr.status == 200) {
             var return_data = hr.responseText;
-            }
+            console.log(return_data);
+        }
     }
     // Send the data to PHP now... and wait for response to update the status div
     hr.send(vars); // Actually execute the request
