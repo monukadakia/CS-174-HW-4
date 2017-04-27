@@ -99,6 +99,14 @@
 =======
 >>>>>>> 46f80b6e0f7c02dc40e56374c2031b1c642fa4ef
 >>>>>>> 7cd243f81245852da07b9d8df6aa042e5624c2e6
+<<<<<<< HEAD
+[2017-04-27 04:02:18] general.INFO: User has visited the Edit Page to edit the spreadsheet - Lol [] []
+[2017-04-27 04:02:38] general.INFO: User has visited the Edit Page to edit the spreadsheet - Lol [] []
+[2017-04-27 04:02:39] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:02:40] general.INFO: User has visited the Edit Page to edit the spreadsheet - lol [] []
+[2017-04-27 04:21:04] general.INFO: User has visited the Landing Page. [] []
+[2017-04-27 04:21:27] general.INFO: User has visited the Landing Page. [] []
+=======
 [2017-04-27 04:00:25] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
 [2017-04-27 04:01:23] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
 [2017-04-27 04:01:33] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
@@ -119,6 +127,7 @@
 [2017-04-27 04:17:28] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
 [2017-04-27 04:18:00] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
 [2017-04-27 04:18:14] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
+<<<<<<< HEAD
 [2017-04-27 04:20:24] general.INFO: User has visited the Landing Page. [] []
 [2017-04-27 04:20:26] general.INFO: User has visited the Edit Page to edit the spreadsheet - kirtan [] []
 [2017-04-27 04:20:37] general.INFO: User has visited the Read Page to read the spreadsheet - kirtan [] []
@@ -166,3 +175,6 @@
 [2017-04-27 04:42:00] general.INFO: User has visited the Edit Page to edit the spreadsheet - 25818136 [] []
 [2017-04-27 04:42:00] general.INFO: User has visited the File Page to view the XML version of spreadsheet - kirtan [] []
 [2017-04-27 04:45:12] general.INFO: User has visited the Landing Page. [] []
+=======
+>>>>>>> 6e296ff1d250174f05e2378e059921ecc70ac8ef
+>>>>>>> 9d6e413a710afd21aa35efa0c9d152fdd9255d9d
