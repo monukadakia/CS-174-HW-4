@@ -102,7 +102,12 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                     map[item] = 1;
                     if(!item.includes("avg")){
                         while(item.charAt(0) == '=') {
-                            item = self.evaluateCell(item.substring(1), 0)[1];
+                            if(!item.includes("avg")){
+                                item = self.evaluateCell(item.substring(1), 0)[1];
+                            }
+                            else{
+                                item = getAvg(item);
+                            }
                             map[item] += 1;
                             if(typeof item != 'string' || map[item] > 1){
                                 break;
@@ -110,82 +115,10 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                         }
                     }
                     else{
-                        var final = "";
-                        var n = /\d+/g;
-                        var range = item.match(n);
-                        var min_alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2); 
-                        var max_alp = item.substring(item.indexOf(":")+1, item.indexOf(":") + 2);
-                        if(range[0] == range[1]){
-
-                           var tmp = "";
-                           var min = parseInt(range[0]);
-                           var check = 0;
-                           while(min_alp != incAlp(max_alp))
-                           {
-                                if(tmp == ""){
-                                    tmp = "(" + min_alp + min + "+" + incAlp(min_alp) + min + ")";
-                                    min_alp = incAlp(min_alp);
-                                    final += tmp;
-                                    check++;
-                                }
-                                else{
-                                    final = "(" + tmp + "+" + min_alp + min + ")";
-                                    tmp = final;
-                                }  
-                                min_alp = incAlp(min_alp);
-                                check++;
-                            }
-                            final = "=" + final;
-                            item = self.evaluateCell(final.substring(1), 0)[1];
-                            item = item/check;
-                        } 
-                        else if(min_alp == max_alp)
-                        {
-                            var alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2);
-                            var tmp = "";
-                            for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
-                                if(tmp == ""){
-                                    tmp = "(" + alp + min + "+" + alp + (min+1) + ")";
-                                    min++;
-                                    final += tmp;
-                                }
-                                else{
-                                    final = "(" + tmp + "+" + alp + min + ")";
-                                    tmp = final;
-                                }
-                            }
-                            var div = range[1] - range[0] + 1
-                            final = "=" + final;
-                            item = self.evaluateCell(final.substring(1), 0)[1];
-                            item = item/div;
-                        }
-                        else
-                        {
-                            var tmp = "";
-                            var count = 0;
-                            while(min_alp != incAlp(max_alp))
-                            {
-                                for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
-                                    if(tmp == ""){
-                                        tmp = "(" + min_alp + min + "+" + min_alp + (min+1) + ")";
-                                        min++;
-                                        final += tmp;
-                                        count++;
-                                    }
-                                    else{
-                                        final = "(" + tmp + "+" + min_alp + min + ")";
-                                        tmp = final;
-                                    }
-                                    count++;
-                                }
-                                min_alp = incAlp(min_alp);
-                            }
-                            final = "=" + final;
-                            item = self.evaluateCell(final.substring(1), 0)[1];
-                            item = item/count;
-                        }
+                        item = getAvg(item);
                     }
                 }
+
                 table += "<td>" + item + "</td>";
             }
             table += "</tr>";
@@ -198,6 +131,113 @@ function Spreadsheet(spreadsheet_id, supplied_data)
     {
         return String.fromCharCode(min_alp.charCodeAt() + 1);
     }
+
+    function getAvg(item){
+        var final = "";
+        var n = /\d+/g;
+        var range = item.match(n);
+        var min_alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2); 
+        var max_alp = item.substring(item.indexOf(":")+1, item.indexOf(":") + 2);
+        if(range[0] == range[1]){
+
+           var tmp = "";
+           var min = parseInt(range[0]);
+           var check = 0;
+           while(min_alp != incAlp(max_alp))
+           {
+                if(tmp == ""){
+                    tmp = "(" + min_alp + min + "+" + incAlp(min_alp) + min + ")";
+                    min_alp = incAlp(min_alp);
+                    final += tmp;
+                    check++;
+                }
+                else{
+                    final = "(" + tmp + "+" + min_alp + min + ")";
+                    tmp = final;
+                }  
+                min_alp = incAlp(min_alp);
+                check++;
+            }
+            final = "=" + final;
+            item = self.evaluateCell(final.substring(1), 0)[1];
+            if(typeof item == 'string'){
+                while(item.charAt(0) == '=') {
+                    item = self.evaluateCell(final.substring(1), 0)[1];
+                    map[item] += 1;
+                    if(typeof item != 'string' || map[item] > 1){
+                        break;
+                    }
+                }
+            }
+            item = item/check;
+        } 
+        else if(min_alp == max_alp)
+        {
+            var alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2);
+            var tmp = "";
+            for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
+                if(tmp == ""){
+                    tmp = "(" + alp + min + "+" + alp + (min+1) + ")";
+                    min++;
+                    final += tmp;
+                }
+                else{
+                    final = "(" + tmp + "+" + alp + min + ")";
+                    tmp = final;
+                }
+            }
+            var div = range[1] - range[0] + 1
+            final = "=" + final;
+            item = self.evaluateCell(final.substring(1), 0)[1];
+            if(typeof item == 'string'){
+                while(item.charAt(0) == '=') {
+                    item = self.evaluateCell(final.substring(1), 0)[1];
+                    map[item] += 1;
+                    if(typeof item != 'string' || map[item] > 1){
+                        break;
+                    }
+                }
+            }
+            item = item/div;
+        }
+        else
+        {
+            var tmp = "";
+            var count = 0;
+            while(min_alp != incAlp(max_alp))
+            {
+                for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
+                    if(tmp == ""){
+                        tmp = "(" + min_alp + min + "+" + min_alp + (min+1) + ")";
+                        min++;
+                        final += tmp;
+                        count++;
+                    }
+                    else{
+                        final = "(" + tmp + "+" + min_alp + min + ")";
+                        tmp = final;
+                    }
+                    count++;
+                }
+                min_alp = incAlp(min_alp);
+            }
+            final = "=" + final;
+            item = self.evaluateCell(final.substring(1), 0)[1];
+            if(typeof item == 'string'){
+                while(item.charAt(0) == '=') {
+                    item = self.evaluateCell(final.substring(1), 0)[1];
+                    map[item] += 1;
+                    if(typeof item != 'string' || map[item] > 1){
+                        break;
+                    }
+                }
+            }
+            item = item/count;
+            console.log(item);
+        }
+        return item;
+    }
+
     /**
      * Calculates the value of a cell expression in a spreadsheet. Currently,
      * a cell expression is either an integer literal, a non-scientific notation
