@@ -119,7 +119,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                            var tmp = "";
                            var min = parseInt(range[0]);
                            var check = 0;
-                           while(min_alp != max_alp)
+                           while(min_alp != incAlp(max_alp))
                            {
                                 if(tmp == ""){
                                     tmp = "(" + min_alp + min + "+" + incAlp(min_alp) + min + ")";
@@ -137,8 +137,6 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                             final = "=" + final;
                             item = self.evaluateCell(final.substring(1), 0)[1];
                             item = item/check;
-                            console.log(item);
-                            console.log(final);
                         } 
                         else
                         {
