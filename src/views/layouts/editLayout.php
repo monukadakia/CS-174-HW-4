@@ -29,7 +29,7 @@ class editLayout extends mainView {
             $urlf = 'localhost/Hw4/index.php?c=file&m=fileLayout&webSheetName='.$_REQUEST['webSheetName'].'&arg1='.$hashCodes['f'];
 
         ?>
-        <label id="editURL"> Edit Url:</label><input type="text" name="editURL" value="<?php echo $urle;?>"/><br/>
+        <label style="display:inline-block;padding-top:20px;" id="editURL"> Edit Url:</label><input style="display:inline;" type="text" name="editURL" value="<?php echo $urle;?>"/><br/>
         <label id="readURL"> Read Url:</label><input type="text" name="readURL" value="<?php echo $urlr;?>"/><br/>
         <label id="fileURL"> File Url:</label><input type="text" name="fileURL" value="<?php echo $urlf;?>"/><br/>
 
