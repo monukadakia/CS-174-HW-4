@@ -113,23 +113,53 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                         var final = "";
                         var n = /\d+/g;
                         var range = item.match(n);
-                        var alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2);
-                        var tmp = "";
-                        for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
-                            if(tmp == ""){
-                                tmp = "(" + alp + min + "+" + alp + (min+1) + ")";
-                                min++;
-                                final += tmp;
+                        if(range[0] == range[1]){
+                           var min_alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2); 
+                           var max_alp = item.substring(item.indexOf(":")+1, item.indexOf(":") + 2);
+                           var tmp = "";
+                           var min = parseInt(range[0]);
+                           var check = 0;
+                           while(min_alp != max_alp)
+                           {
+                                if(tmp == ""){
+                                    tmp = "(" + min_alp + min + "+" + incAlp(min_alp) + min + ")";
+                                    min_alp = incAlp(min_alp);
+                                    final += tmp;
+                                    check++;
+                                }
+                                else{
+                                    final = "(" + tmp + "+" + min_alp + min + ")";
+                                    tmp = final;
+                                }  
+                                min_alp = incAlp(min_alp);
+                                check++;
                             }
-                            else{
-                                final = "(" + tmp + "+" + alp + min + ")";
-                                tmp = final;
+                            final = "=" + final;
+                            item = self.evaluateCell(final.substring(1), 0)[1];
+                            item = item/check;
+                            console.log(item);
+                            console.log(final);
+                        } 
+                        else
+                        {
+                            var alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2);
+                            var tmp = "";
+                            for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
+                                if(tmp == ""){
+                                    tmp = "(" + alp + min + "+" + alp + (min+1) + ")";
+                                    min++;
+                                    final += tmp;
+                                }
+                                else{
+                                    final = "(" + tmp + "+" + alp + min + ")";
+                                    tmp = final;
+                                }
                             }
+                            var div = range[1] - range[0] + 1
+                            final = "=" + final;
+                            item = self.evaluateCell(final.substring(1), 0)[1];
+                            item = item/div;
                         }
-                        var div = range[1] - range[0] + 1
-                        final = "=" + final;
-                        item = self.evaluateCell(final.substring(1), 0)[1];
-                        item = item/div;
                     }
                 }
                 table += "<td>" + item + "</td>";
@@ -138,6 +168,11 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         }
         table += "</table></div>";
         container.innerHTML = table;
+    }
+
+    function incAlp(min_alp)
+    {
+        return String.fromCharCode(min_alp.charCodeAt() + 1);
     }
     /**
      * Calculates the value of a cell expression in a spreadsheet. Currently,
