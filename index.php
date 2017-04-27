@@ -26,9 +26,14 @@ if ($activity == 'landingController') {
     $_REQUEST['m'] = "landingLayout";
     new Control\landingController($_REQUEST['m'], $_REQUEST['m']);
 }
-else if ($activity == 'editController' || $activity == 'apiController'){
+else if ($activity == 'editController'){
     $logger->info('User has visited the Edit Page to edit the spreadsheet - '.$_REQUEST['webSheetName']);
     new Control\editController($_REQUEST['m']);
+}
+else if ($activity == 'apiController'){
+    echo "It came in here";
+    $logger->info('User has changed something on the spreadsheet - '.$_REQUEST['webSheetName']);
+    //new Control\editController($_REQUEST['m']);
 }
 else if($activity == 'readController') {
     $logger->info('User has visited the Read Page to read the spreadsheet - '.$_REQUEST['webSheetName']);

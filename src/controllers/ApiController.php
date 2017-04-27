@@ -11,7 +11,7 @@ $webSheetName = $_POST['webSheetName'];
 echo "data is $data";
 
 updateSheet($data, $webSheetName);
-header("Location:index.php?c=api&m=editLayout&webSheetName=$webSheetName");
+header("Location:/../../index.php?c=api&m=editLayout&webSheetName=$webSheetName");
 
 function updateSheet($data, $webSheetName){
 	$db = new Configs\CreateDB();
