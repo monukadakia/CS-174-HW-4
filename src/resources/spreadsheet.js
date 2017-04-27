@@ -100,11 +100,63 @@ function Spreadsheet(spreadsheet_id, supplied_data)
                 if (typeof data[i][j] == 'string') {
                     item = data[i][j];
                     map[item] = 1;
-                    while(item.charAt(0) == '=') {
-                        item = self.evaluateCell(item.substring(1), 0)[1];
-                        map[item] += 1;
-                        if(typeof item != 'string' || map[item] > 1){
-                            break;
+                    if(!item.includes("avg")){
+                        while(item.charAt(0) == '=') {
+                            item = self.evaluateCell(item.substring(1), 0)[1];
+                            map[item] += 1;
+                            if(typeof item != 'string' || map[item] > 1){
+                                break;
+                            }
+                        }
+                    }
+                    else{
+                        var final = "";
+                        var n = /\d+/g;
+                        var range = item.match(n);
+                        if(range[0] == range[1]){
+                           var min_alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2); 
+                           var max_alp = item.substring(item.indexOf(":")+1, item.indexOf(":") + 2);
+                           var tmp = "";
+                           var min = parseInt(range[0]);
+                           var check = 0;
+                           while(min_alp != incAlp(max_alp))
+                           {
+                                if(tmp == ""){
+                                    tmp = "(" + min_alp + min + "+" + incAlp(min_alp) + min + ")";
+                                    min_alp = incAlp(min_alp);
+                                    final += tmp;
+                                    check++;
+                                }
+                                else{
+                                    final = "(" + tmp + "+" + min_alp + min + ")";
+                                    tmp = final;
+                                }  
+                                min_alp = incAlp(min_alp);
+                                check++;
+                            }
+                            final = "=" + final;
+                            item = self.evaluateCell(final.substring(1), 0)[1];
+                            item = item/check;
+                        } 
+                        else
+                        {
+                            var alp = item.substring(item.indexOf("(")+1, item.indexOf("(") + 2);
+                            var tmp = "";
+                            for(var min = parseInt(range[0]); min <= parseInt(range[1]); min++){
+                                if(tmp == ""){
+                                    tmp = "(" + alp + min + "+" + alp + (min+1) + ")";
+                                    min++;
+                                    final += tmp;
+                                }
+                                else{
+                                    final = "(" + tmp + "+" + alp + min + ")";
+                                    tmp = final;
+                                }
+                            }
+                            var div = range[1] - range[0] + 1
+                            final = "=" + final;
+                            item = self.evaluateCell(final.substring(1), 0)[1];
+                            item = item/div;
                         }
                     }
                 }
@@ -114,6 +166,11 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         }
         table += "</table></div>";
         container.innerHTML = table;
+    }
+
+    function incAlp(min_alp)
+    {
+        return String.fromCharCode(min_alp.charCodeAt() + 1);
     }
     /**
      * Calculates the value of a cell expression in a spreadsheet. Currently,
@@ -314,7 +371,7 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         }
         event.stopPropagation();
         event.preventDefault();
-        ajax_post(data_elt.value);
+        ajax_post(JSON.stringify(data));
         self.draw();
     }
     if (this.mode == 'write') {
