@@ -132,18 +132,18 @@ function Spreadsheet(spreadsheet_id, supplied_data)
         }
         location = self.skipWhitespace(cell_expression, location);
         out[0] = location;
-        if(cell_expression.charAt(location) == "(") {
+        if(cell_expression.charAt(location) === "(") {
             left_out = self.evaluateCell(cell_expression, location + 1);
             if (!['+', '-', '*', '/'].includes(
                 cell_expression.charAt(left_out[0])) ||
-                typeof left_out[1] == 'String') {
+                typeof left_out[1] === 'String') {
                 out[0] = left_out[0];
                 out[1] = "NaN";
                 return out;
             }
             right_out = self.evaluateCell(cell_expression, left_out[0] + 1);
-            if (cell_expression.charAt(right_out[0]) != ')' ||
-                typeof right_out[1] == 'String') {
+            if (cell_expression.charAt(right_out[0]) !== ')' ||
+                typeof right_out[1] === 'String') {
                 out[0] = right_out[0];
                 out[1] = "NaN";
                 return out;
@@ -152,9 +152,9 @@ function Spreadsheet(spreadsheet_id, supplied_data)
             out[1] = eval("" + left_out[1] +
                 cell_expression.charAt(left_out[0]) + right_out[1]);
             return out;
-        } else if (cell_expression.charAt(location) == "-") {
+        } else if (cell_expression.charAt(location) === "-") {
             sub_out = self.evaluateCell(cell_expression, location + 1);
-            if (sub_out[1] == 'NaN') {
+            if (sub_out[1] === 'NaN') {
                 return sub_out;
             }
             out[0] = self.skipWhitespace(cell_expression, sub_out[0]);
