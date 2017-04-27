@@ -18,6 +18,7 @@ class landingLayout extends mainView {
 
         <form>
             <input type="hidden" name="c" value="edit"/>
+            <input type="hidden" name="m" value="editLayout"/>
             <input type="text" name="webSheetName"/>
             <button>Go</button>
         </form>
