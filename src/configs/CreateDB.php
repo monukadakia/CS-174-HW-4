@@ -1,6 +1,5 @@
 <?php
 namespace coolname\Hw4\src\configs;
-require_once "Config.php";
 
 class CreateDB {
 
