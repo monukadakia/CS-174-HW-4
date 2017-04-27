@@ -98,13 +98,13 @@ class fileLayout
     }
 
     function spreadSheetRowXML($rowData){
-        $currentRow = $this->rowStartTag;
+        $currentRow = $this->indent.$this->rowStartTag."<br/>";
 
         foreach ($rowData as $columnData){
-            $currentRow.= $this->columnStartTag.$columnData.$this->columnEndTag;
+            $currentRow.= $this->columnStartTag.$columnData.$this->columnEndTag."<br/>";
         }
 
-        return $currentRow.$this->rowEndTag."<br/>";
+        return $currentRow.$this->indent.$this->rowEndTag."<br/>";
     }
 
 }
